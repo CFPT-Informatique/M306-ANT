@@ -1,0 +1,31 @@
+<diagram program="umletino" version="15.1"><zoom_level>10</zoom_level><element><id>UMLClass</id><coordinates><x>140</x><y>250</y><w>170</w><h>140</h></coordinates><panel_attributes>Users
+--
+_- usr_id: int_
+- username: str
+- password_hash: str
+- email: str
+- is_online: bool
+</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>360</x><y>470</y><w>170</w><h>140</h></coordinates><panel_attributes>Messages
+--
+_- msg_id: int_
+- content: text
+- time: datetime
+--
+# author: usr_id
+# channel: chn_id</panel_attributes><additional_attributes></additional_attributes></element><element><id>UMLClass</id><coordinates><x>580</x><y>250</y><w>170</w><h>140</h></coordinates><panel_attributes>Channels
+--
+_- chl_id: int_
+- name: str
+- status: bool
+--
+# users: list (usr_id)</panel_attributes><additional_attributes></additional_attributes></element><element><id>Relation</id><coordinates><x>300</x><y>300</y><w>300</w><h>50</h></coordinates><panel_attributes>lt=-
+m1=1:1
+m2=0:*
+être</panel_attributes><additional_attributes>10;20;280;20</additional_attributes></element><element><id>Relation</id><coordinates><x>170</x><y>380</y><w>210</w><h>160</h></coordinates><panel_attributes>lt=-
+m1=0:*
+m2=1:1
+                 envoyé par</panel_attributes><additional_attributes>50;10;50;130;190;130</additional_attributes></element><element><id>Relation</id><coordinates><x>520</x><y>380</y><w>200</w><h>160</h></coordinates><panel_attributes>lt=-
+m1=0:*
+m2=1:1
+être dans             
+</panel_attributes><additional_attributes>150;10;150;130;10;130</additional_attributes></element></diagram>
