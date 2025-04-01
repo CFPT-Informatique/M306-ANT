@@ -4,7 +4,7 @@
 # Goal 		: Create table and data for users      ¦
 ## ------------------------------------------------
 
-# creat table 
+# Create table 
 CREATE TABLE Users (
     idUsr INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(20) NOT NULL,
@@ -18,6 +18,6 @@ CREATE TABLE Users (
 ALTER TABLE Users
 ADD PRIMARY KEY (idUsr); 
 
-# create test data
+# Create Test Data
 
 

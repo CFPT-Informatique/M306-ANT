@@ -1,10 +1,10 @@
 ## --------------------------------------------------
 # Author 	: Scared                                 ¦
 # Date 		: 31.03.2025                             ¦
-# Goal 		: Create table and data test for Channel ¦
+# Goal 		: Create Table and Data Test for Channel ¦
 ## --------------------------------------------------
 
-# creat table 
+# Create Table 
 CREATE TABLE Channel (
     chl_id int NOT NULL AUTO_INCREMENT,
     name varchar(20) NOT NULL,
@@ -16,7 +16,7 @@ CREATE TABLE Channel (
 ALTER TABLE Users
 ADD PRIMARY KEY (chl_id);
 
-# ADD foreing key for usersId
+# ADD Foreign key for usersId
 ALTER TABLE Users
 ADD CONSTRAINT fk_user FOREIGN KEY (usersId) REFERENCES Users(idUsr);
 

@@ -4,7 +4,7 @@
 # Goal 		: Create table and data for messages   ¦
 ## ------------------------------------------------
 
-# creat table 
+# Create table 
 CREATE TABLE Messages (
     msgId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     msg TEXT NOT NULL,
