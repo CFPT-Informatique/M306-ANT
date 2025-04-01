@@ -8,6 +8,7 @@
 DROP TABLE IF EXISTS Messages;
 
 # Create Table 
+
 CREATE TABLE Messages (
     msgId INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     msg TEXT NOT NULL,

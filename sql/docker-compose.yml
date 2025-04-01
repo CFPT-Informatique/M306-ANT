@@ -1,0 +1,16 @@
+version: '3.8'
+
+services:
+  db:
+    image: mariadb:11
+    container_name: chatapp_db
+    restart: always
+    environment:
+      MYSQL_ROOT_PASSWORD: gn9Ge9r8W75p
+      MYSQL_DATABASE: chatdb
+      MYSQL_USER: k7j5N756
+      MYSQL_PASSWORD: 701ceq8EvLTv
+    ports:
+      - "3306:3306"
+    volumes:
+      - ./init-sql:/docker-entrypoint-initdb.d
