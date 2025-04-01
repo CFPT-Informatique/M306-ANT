@@ -1,10 +1,13 @@
 ## ------------------------------------------------
 # Author 	: Scared                               ¦
 # Date 		: 31.03.2025                           ¦
-# Goal 		: Create table and data for users      ¦
+# Goal 		: Create table and test data for users ¦
 ## ------------------------------------------------
 
-# Create table 
+# Drop table if it already exists
+DROP TABLE IF EXISTS Users;
+
+# Create Users table
 CREATE TABLE Users (
     idUsr INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
     name VARCHAR(20) NOT NULL,
@@ -13,11 +16,4 @@ CREATE TABLE Users (
     isOnline BOOLEAN NOT NULL DEFAULT FALSE
 );
 
-
-# ADD primary key 
-ALTER TABLE Users
-ADD PRIMARY KEY (idUsr); 
-
-# Create Test Data
-
-
+# Insert test data
