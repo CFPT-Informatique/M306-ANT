@@ -27,7 +27,7 @@ Une application de messagerie instantanée où les utilisateurs peuvent s’envo
 6. **(45 min)** Test du **WebSocket** avec Postman ou une interface simple.  
 
 ### 🎨 Phase 3 : Frontend et connexion à l’API (4 séances)  
-7. **(45 min)** Création du frontend (**React ou Vue**) avec gestion des routes.  
+7. **(45 min)** Création du frontend (**React**) avec gestion des routes.  
 8. **(45 min)** Intégration de **l’authentification** (JWT ou Identity).  
 9. **(45 min)** Connexion à l’API pour récupérer et envoyer les messages.  
 10. **(45 min)** Intégration de **SignalR côté frontend** pour voir les messages en direct.  
@@ -46,4 +46,4 @@ Une application de messagerie instantanée où les utilisateurs peuvent s’envo
 ---
 
 🎯 **Objectif** : Un chat fonctionnel, **en temps réel**, avec gestion des utilisateurs et stockage des messages dans une base de données.  
-Tu peux copier-coller ce planning et l'utiliser comme roadmap ! 🚀🔥
+On peut utiliser ce planning comme roadmap ! 🚀🔥
