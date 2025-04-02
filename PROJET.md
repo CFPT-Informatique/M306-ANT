@@ -6,10 +6,10 @@ Une application de messagerie instantanée où les utilisateurs peuvent s’envo
 
 ## 🏗 Technologies utilisées  
 - **Backend** : ASP.NET Core Web API  
-- **Base de données** : SQL Server  
+- **Base de données** : SQL Server avec mysql  
 - **ORM** : Entity Framework Core  
-- **WebSockets** : SignalR (pour le temps réel)  
-- **Frontend** : React ou Vue.js  
+- **WebSockets** : SignalR  
+- **Frontend** : React  
 - **Authentification** : JWT ou Identity  
 
 ---
