@@ -11,7 +11,7 @@ function Register(){
             <label className="lblPwd">Enter your password :
                     <input type="password" />
             </label>
-            <label className="lblPwd">confirm your password :
+            <label className="lblPwd">Confirm your password :
                     <input type="password" />
             </label>
             <button>Register</button>
