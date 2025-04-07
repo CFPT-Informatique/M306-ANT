@@ -1,5 +1,5 @@
 import React from "react";
-import "../css/login.css"
+import "../css/login.css";
 import { FaArrowRight  } from "react-icons/fa";
 import { SlRocket } from "react-icons/sl";
 import { useNavigate } from "react-router-dom";
