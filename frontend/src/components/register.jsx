@@ -1,7 +1,7 @@
 import React from "react";
-import "../css/login.css"
+import "../css/register.css"
 
-function Login(){
+function Register(){
     return(
         <main>
             <form>
@@ -11,11 +11,14 @@ function Login(){
             <label className="lblPwd">Enter your password :
                     <input type="password" />
             </label>
-            <button>Login</button>
+            <label className="lblPwd">confirm your password :
+                    <input type="password" />
+            </label>
+            <button>Register</button>
             
             </form>
         </main>
     );
 };
 
-export default Login;
+export default Register;
