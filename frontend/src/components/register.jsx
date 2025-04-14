@@ -1,8 +1,9 @@
 import React, { useState } from "react";
-import "../css/register.css";
 import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import { SlUserFollow } from "react-icons/sl";
+import styles from "./css/register.module.css";
+
 
 function Register() {
     const navigate = useNavigate();
@@ -59,58 +60,59 @@ function Register() {
     };
 
     return (
-        <main>
-            <form onSubmit={handleSubmit}>
-                <label className="lblName">Enter your name :
-                    <input 
-                        type="text"
-                        name="name"
-                        placeholder="name"
-                        value={formData.name}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <label className="lblEmail">Enter your email :
-                    <input 
-                        type="email"
-                        name="email"
-                        placeholder="exemple@gmail.com"
-                        value={formData.email}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <label className="lblPwd">Enter your password :
-                    <input 
-                        type="password"
-                        name="password"
-                        placeholder="My password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <label className="lblPwd">Confirm your password :
-                    <input 
-                        type="password"
-                        name="confirmPassword"
-                        placeholder="My password"
-                        value={formData.confirmPassword}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                <button type="submit"><SlUserFollow /> Register</button>
-                <button 
-                    onClick={() => navigate("/")}
-                    className="back-button"
-                    type="button"
-                >
-                    <FaArrowLeft /> Retour
-                </button>
-            </form>
-        </main>
+        <div className={styles.registerBody}>
+            <div className={styles.registerMain}>
+                <form onSubmit={handleSubmit}>
+                    <label>Enter your name :
+                        <input 
+                            type="text"
+                            name="name"
+                            placeholder="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
+                    <label>Enter your email :
+                        <input 
+                            type="email"
+                            name="email"
+                            placeholder="exemple@gmail.com"
+                            value={formData.email}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
+                    <label>Enter your password :
+                        <input 
+                            type="password"
+                            name="password"
+                            placeholder="My password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
+                    <label>Confirm your password :
+                        <input 
+                            type="password"
+                            name="confirmPassword"
+                            placeholder="My password"
+                            value={formData.confirmPassword}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
+                    <button type="submit"><SlUserFollow /> Register</button>
+                    <button 
+                        onClick={() => navigate("/")}
+                        type="button"
+                    >
+                        <FaArrowLeft /> Retour
+                    </button>
+                </form>
+            </div>
+        </div>
     );
 };
 

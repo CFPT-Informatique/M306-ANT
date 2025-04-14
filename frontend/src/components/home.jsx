@@ -1,11 +1,19 @@
 import React from "react";
-import "../css/home.css";
+import styles from "./css/home.module.css";
 
 function Home() {
+    const handleLogout = () => {
+        localStorage.removeItem("authToken");
+        window.location.href = "/login";
+    };
+
     return (
-        <main>
-            sdasda
-        </main>
+        <div className={styles.homeBody}>
+            <div className={styles.homeMain}>
+                <p>yoyo wassup'</p>
+                <button onClick={handleLogout}>Deconnexion</button>
+            </div>
+        </div>
     );
 }
 

@@ -1,10 +1,10 @@
 import React, { useState } from "react";
-import "../css/login.css";
 import { FaArrowRight } from "react-icons/fa";
 import { SlRocket } from "react-icons/sl";
 import { useNavigate } from "react-router-dom";
+import styles from "./css/login.module.css";
 
-function Login() {
+function Login({setLoggedIn}) {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
         username: "",
@@ -39,61 +39,63 @@ function Login() {
                 const data = await response.json();
                 
                 localStorage.setItem("authToken", data.token);
+                setLoggedIn(true);
                 navigate("/home");
             } else {
                 setError("Identifiants incorrects");
             }
         } catch (err) {
-            setError("Erreur de connexion au serveur");
+            setError(`Erreur de connexion au serveur : ${err}`);
         } finally {
             setIsLoading(false);
         }
     };
 
     return (
-        <main>
-            <form onSubmit={handleSubmit}>
-                {error && <div className="error-message">{error}</div>}
-                
-                <label className="lblName">
-                Enter your name :
-                    <input 
-                        type="text" 
-                        name="username"
-                        value={formData.username}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                
-                <label className="lblPwd">
-                Enter your password :
-                    <input 
-                        type="password" 
-                        name="password"
-                        value={formData.password}
-                        onChange={handleChange}
-                        required
-                    />
-                </label>
-                
-                <button type="submit" disabled={isLoading}>
-                    {isLoading ? "Chargement..." : (
-                        <>
-                            <SlRocket /> Login
-                        </>
-                    )}
-                </button>
-                
-                <button 
-                    type="button"
-                    onClick={() => navigate("/register")}
-                    className="back-button"
-                >
-                    <FaArrowRight /> register
-                </button>
-            </form>
-        </main>
+        <div className={styles.loginBody}>
+            <div className={styles.loginMain}>
+                <form onSubmit={handleSubmit}>
+                    {error && <div>{error}</div>}
+                    
+                    <label>
+                    Enter your name :
+                        <input 
+                            type="text" 
+                            name="username"
+                            value={formData.username}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
+                    
+                    <label>
+                    Enter your password :
+                        <input 
+                            type="password" 
+                            name="password"
+                            value={formData.password}
+                            onChange={handleChange}
+                            required
+                        />
+                    </label>
+                    
+                    <button type="submit" disabled={isLoading}>
+                        {isLoading ? "Chargement..." : (
+                            <>
+                                <SlRocket /> Login
+                            </>
+                        )}
+                    </button>
+                    
+                    <button 
+                        type="button"
+                        onClick={() => navigate("/register")}
+                    >
+                        <FaArrowRight /> register
+                    </button>
+                </form>
+            </div>
+        </div>
     );
 }
 
