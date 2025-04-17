@@ -7,6 +7,10 @@ function Home() {
         window.location.href = "/login";
     };
 
+    // const handleChannelSelect = (channelName) => {
+    //     // Logique de changement de channel ici
+    // };
+
     return (
         <div className={styles.homeContainer}>
             {/* Header */}
@@ -21,7 +25,16 @@ function Home() {
             <div className={styles.mainContent}>
                 {/* Liste des salons (channels) */}
                 <aside className={styles.channelList}>
-                    <ul>
+                    <ul className={styles.channelList}>
+                        {/* Ci dessous un exemple du fonctionnement de la selection des channels.
+                        À adapter en fonction de comment on fait le reste...
+                        <li
+                            key={channel}
+                            onClick={() => handleChannelSelect(channel)}
+                            className={selectedChannel === channel ? styles.active : ''}
+                        >
+                            {channel}
+                        </li> */}
                         <li className={styles.active}>Chat</li>
                         <li>Images</li>
                         <li>Commands</li>
@@ -37,23 +50,33 @@ function Home() {
                     {/* Zone d'affichage des messages */}
                     <div className={styles.messages}>
                         <div className={styles.message}>
-                            <div className={styles.messageAvatar}>U1</div>
+                            <div className={`${styles.messageAvatar} ${styles.user}`} />
                             <div className={styles.messageContent}>
                                 <div className={styles.messageHeader}>
-                                    <span className={styles.author}>User1</span>
+                                    <span className={styles.author}>IronTron1</span>
                                     <span className={styles.timestamp}>Today at 12:34 PM</span>
                                 </div>
-                                <div className={styles.messageText}>Hello Everyone!</div>
+                                <div className={styles.messageText}>Salut les copains</div>
                             </div>
                         </div>
                         <div className={styles.message}>
-                            <div className={styles.messageAvatar}>U2</div>
+                            <div className={`${styles.messageAvatar} ${styles.user}`} />
                             <div className={styles.messageContent}>
                                 <div className={styles.messageHeader}>
-                                    <span className={styles.author}>User2</span>
+                                    <span className={styles.author}>Wizoo</span>
                                     <span className={styles.timestamp}>Today at 12:35 PM</span>
                                 </div>
-                                <div className={styles.messageText}>Hi there! How's it going?</div>
+                                <div className={styles.messageText}>Wesh je me suis fais retirer mon permis</div>
+                            </div>
+                        </div>
+                        <div className={`${styles.message} ${styles.ownMessage}`}>
+                            <div className={`${styles.messageAvatar} ${styles.me}`} />
+                            <div className={styles.messageContent}>
+                                <div className={styles.messageHeader}>
+                                    <span className={styles.author}>TokyoBoyVS</span>
+                                    <span className={styles.timestamp}>Today at 12:35 PM</span>
+                                </div>
+                                <div className={styles.messageText}>Ohh bah tu sais Lucien bebou c'est ca que ca fait de conduire comme un malade.</div>
                             </div>
                         </div>
                     </div>
@@ -71,11 +94,10 @@ function Home() {
                 {/* Liste des utilisateurs (membres du salon) */}
                 <aside className={styles.userList}>
                     <h3>Online — 4</h3>
-                    <ul>
-                        <li>User1</li>
-                        <li>User2</li>
-                        <li>User3</li>
-                        <li>User4</li>
+                    <ul className={styles.userList}>
+                        <li>IronTron1</li>
+                        <li>TokyoBoyVS</li>
+                        <li>Wizoo</li>
                     </ul>
                 </aside>
             </div>

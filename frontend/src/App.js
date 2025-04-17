@@ -27,6 +27,10 @@ function App() {
     <div className="App">
       <Router>
       <Routes>
+          <Route
+            path="/chat"
+            element={<Home />}
+          />
           <Route 
             path="/" 
             element={<PrivateRoute loggedIn={loggedIn} element={<Home />} />} 
