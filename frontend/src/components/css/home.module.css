@@ -50,6 +50,7 @@
 .mainContent {
   flex: 1;
   display: flex;
+  overflow: hidden;
   margin: 0;
 }
 
@@ -100,6 +101,7 @@
   flex: 1;
   display: flex;
   flex-direction: column;
+  overflow: hidden;
   background: #fff;
   min-width: 600px;
 }
@@ -115,6 +117,7 @@
   flex: 1;
   padding: 20px;
   overflow-y: auto;
+  -webkit-overflow-scrolling: touch;
   display: flex;
   flex-direction: column;
   gap: 16px;
@@ -240,22 +243,51 @@
   background: #fff;
   border-top: 1px solid #e2e8f0;
   border-bottom: 1px solid #e2e8f0;
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
 
 .chatInput {
-  width: 100%;
+  flex: 1;
+  max-width: 88%;
+  min-width: 88%;
   padding: 14px;
   border: 1px solid #cbd5e1;
   border-radius: 8px;
   font-size: 0.95rem;
   resize: none;
-  transition: all 0.2s ease;
+  overflow: hidden;
+  transition: border-color 0.2s ease;
 }
 
 .chatInput:focus {
-  outline: none;
   border-color: #94a3b8;
   box-shadow: 0 0 0 2px #e2e8f0;
+}
+
+.sendButton {
+  background: #2563eb;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 6px;
+  font-weight: 500;
+  font-size: large;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  transition: background 0.2s ease;
+  height: auto;
+}
+
+.sendButton:hover {
+  background: #1e40af;
+}
+
+.sendArrow {
+  font-size: 0.85em;
 }
 
 .userList h3 {
