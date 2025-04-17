@@ -5,16 +5,11 @@ import seekflowLogo from "./assets/seekflow.png"
 function Home() {
     // --- STATE FOR MESSAGES + INPUT ---
     const [messages, setMessages] = useState([
-        { author: "IronTron1", text: "Salut les copains", timestamp: new Date("2025-04-17T12:34:00") },
-        { author: "Wizoo", text: "Wesh je me suis fais retirer mon permis", timestamp: new Date("2025-04-17T12:35:00") },
-        { author: "IronTron1", text: "Salut les copains", timestamp: new Date("2025-04-17T12:34:00") },
-        { author: "Wizoo", text: "Wesh je me suis fais retirer mon permis", timestamp: new Date("2025-04-17T12:35:00") },
-        { author: "Wizoo", text: "Wesh je me suis fais retirer mon permis", timestamp: new Date("2025-04-17T12:35:00") },
-        { author: "Wizoo", text: "Wesh je me suis fais retirer mon permis", timestamp: new Date("2025-04-17T12:35:00") },
-        { author: "Wizoo", text: "Wesh je me suis fais retirer mon permis", timestamp: new Date("2025-04-17T12:35:00") },
-        { author: "Wizoo", text: "Wesh je me suis fais retirer mon permis", timestamp: new Date("2025-04-17T12:35:00") },
-        { author: "Wizoo", text: "Wesh je me suis fais retirer mon permis", timestamp: new Date("2025-04-17T12:35:00") },
-        { author: "Wizoo", text: "Wesh je me suis fais retirer mon permis", timestamp: new Date("2025-04-17T12:35:00") }
+        { author: "IronTron1", text: "Hey les gars, la CI plante encore sur le build frontend 🐛, quelqu’un a une idée ?", timestamp: new Date("2025-04-17T12:46:00") },
+        { author: "TokyoBoyVS", text: "J’ai vu, c’est le test e2e qui timeout… Peut-être qu’on mock pas assez l’API interne ?", timestamp: new Date("2025-04-17T12:47:00") },
+        { author: "Wizoo", text: "Possible, ou alors le container Docker manque de mémoire… Je propose d’ajouter un swap et retester.", timestamp: new Date("2025-04-17T12:48:00") },
+        { author: "IronTron1", text: "Good call, je m’en occupe. Je pousse un fix sur le Dockerfile et je relance le pipeline 🚀", timestamp: new Date("2025-04-17T12:49:00") },
+        { author: "TokyoBoyVS", text: "Top, pense aussi à mettre à jour le README pour la config locale 😉", timestamp: new Date("2025-04-17T12:50:00") }        
     ]);
     const [input, setInput] = useState("");
 
