@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./css/home.module.css";
+import seekflowLogo from "./assets/seekflow.png"
 
 function Home() {
     const handleLogout = () => {
@@ -15,7 +16,10 @@ function Home() {
         <div className={styles.homeContainer}>
             {/* Header */}
             <header className={styles.header}>
-                <div className={styles.logo}>M306 : LiveChat</div>
+                <div className={styles.logo}>
+                    <img src={seekflowLogo} alt="Seekflow logo" className={styles.seekflowLogo} />
+                    <span>Seekflow</span>
+                </div>
                 <button className={styles.logoutButton} onClick={handleLogout}>
                     Déconnexion
                 </button>

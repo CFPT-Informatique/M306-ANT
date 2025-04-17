@@ -24,6 +24,14 @@
   color: #0f172a;
 }
 
+.seekflowLogo {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-right: 8px;
+  vertical-align: middle;
+}
+
 .logoutButton {
   background: #f1f5f9;
   color: #64748b;
