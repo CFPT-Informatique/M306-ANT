@@ -3,12 +3,13 @@ import { useNavigate } from "react-router-dom";
 import { FaArrowLeft } from "react-icons/fa";
 import { SlUserFollow } from "react-icons/sl";
 import styles from "./css/register.module.css";
+import Swal from 'sweetalert2'
 
 
 function Register() {
     const navigate = useNavigate();
     const [formData, setFormData] = useState({
-        name: '',
+        username: '',
         email: '',
         password: '',
         confirmPassword: ''
@@ -26,12 +27,20 @@ function Register() {
         e.preventDefault();
 
         if (formData.password !== formData.confirmPassword) {
-            alert("Les mots de passe ne correspondent pas!");
+           // alert("Les mots de passe ne correspondent pas!");
+           Swal.fire({
+            title: 'Attention!',
+            text: 'Les mots de passe ne correspondent pas!',
+            icon: 'warning',
+            confirmButtonText: 'Continue',
+            background:"#1e1e1e",
+            color:"#e0e0e0"
+          })
             return;
         }
 
         const postData = {
-            name: formData.name,
+            username: formData.name,
             email: formData.email,
             password: formData.password
         };
@@ -51,11 +60,28 @@ function Register() {
 
             const data = await response.json();
             console.log('Succès:', data);
+            Swal.fire({
+                position: "top-end",
+                icon: "Success",
+                title: "Compte créer avec succès",
+                showConfirmButton: false,
+                timer: 1500,
+                background:"#1e1e1e",
+                color:"#e0e0e0"
+              })
             navigate("/");
             
         } catch (error) {
             console.error('Erreur:', error);
-            alert("Une erreur est survenue lors de l'enregistrement");
+            // alert("Une erreur est survenue lors de l'enregistrement");
+            Swal.fire({
+                title: 'Error!',
+                text: error,
+                icon: 'error',
+                confirmButtonText: 'Continue',
+                background:"#1e1e1e",
+                color:"#e0e0e0"
+              })
         }
     };
 
@@ -110,7 +136,10 @@ function Register() {
                     >
                         <FaArrowLeft /> Retour
                     </button>
+
                 </form>
+
+                
             </div>
         </div>
     );

@@ -1,18 +1,30 @@
 /* home.module.css */
+
+/* variables */
+:root {
+  --white: #ffffff;
+  --lighter-grey: #a0a0a0;
+  --light-grey: #808080;
+  --grey: #606060;
+  --dark-grey: #404040;
+  --darker-grey: #202020;
+  --black: #000000;
+}
+
 .homeContainer {
   display: flex;
   flex-direction: column;
   height: 100vh;
   margin: 0;
-  background: #f8fafc;
-  color: #1e293b;
+  background: var(--grey);
+  color: var(--white);
   font-family: 'Inter', system-ui, sans-serif;
 }
 
 .header {
   padding: 14px 32px;
-  background: #fff;
-  border: 1px solid #e2e8f0;
+  background: var(--darker-grey);
+  border: 1px solid var(--light-grey);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -21,7 +33,7 @@
 .logo {
   font-weight: 600;
   font-size: 1.2rem;
-  color: #0f172a;
+  color: var(--white);
 }
 
 .seekflowLogo {
@@ -33,9 +45,9 @@
 }
 
 .logoutButton {
-  background: #f1f5f9;
-  color: #64748b;
-  border: 1px solid #cbd5e1;
+  background: var(--lighter-grey);
+  color: var(--white);
+  border: 1px solid var(--light-grey);
   padding: 8px 16px;
   border-radius: 6px;
   font-weight: 500;
@@ -44,7 +56,7 @@
 }
 
 .logoutButton:hover {
-  background: #e2e8f0;
+  background: var(--lighter-grey);
 }
 
 .mainContent {
@@ -58,10 +70,10 @@
 .userList {
   text-align: left;
   width: 200px;
-  background: #fff;
-  border-left: 1px solid #e2e8f0;
-  border-right: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
+  background: var(--dark-grey);
+  border-left: 1px solid var(--light-grey);
+  border-right: 1px solid var(--light-grey);
+  border-bottom: 1px solid var(--light-grey);
   padding: 20px;
   overflow-y: auto;
   overflow-x: hidden;
@@ -69,6 +81,7 @@
 
 .channelList ul,
 .userList ul {
+  color: var(--white);
   padding-left: 0;
   list-style-position: inside;
   border: 0px;
@@ -88,11 +101,11 @@
 
 .channelList li:hover,
 .userList li:hover {
-  background: #f1f5f9;
+  background: var(--darker-grey);
 }
 
 .channelList li.active {
-  background: #f0f4ff;
+  background: var(--darker-grey);
   color: #2563eb;
   font-weight: 500;
 }
@@ -102,14 +115,14 @@
   display: flex;
   flex-direction: column;
   overflow: hidden;
-  background: #fff;
+  background: var(--grey);
   min-width: 600px;
 }
 
 .chatWindow h2 {
   padding: 16px 24px;
   margin: 0;
-  border-bottom: 1px solid #e2e8f0;
+  border-bottom: 1px solid var(--light-grey);
   font-size: 1.1rem;
 }
 
@@ -166,7 +179,7 @@
 
 /* Fallback if images not found */
 .messageAvatar:not([style*="background-image"]) {
-  background-color: #e0f2fe;
+  background-color: var(--light-grey);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -185,8 +198,8 @@
 }
 
 .message:not(.ownMessage) .messageContent {
-  background: #404045;
-  color: #fff;
+  background: var(--dark-grey);
+  color: var(--white);
   margin-left: 8px;
 }
 
@@ -197,12 +210,12 @@
   top: 12px;
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
-  border-right: 8px solid #404045;
+  border-right: 8px solid var(--darker-grey);
 }
 
 .message.ownMessage .messageContent {
-  background: #414158;
-  color: #fff;
+  background: var(--light-grey);
+  color: var(--black);
   margin-right: 8px;
 }
 
@@ -213,7 +226,7 @@
   top: 12px;
   border-top: 8px solid transparent;
   border-bottom: 8px solid transparent;
-  border-left: 8px solid #414158;
+  border-left: 8px solid var(--grey);
 }
 
 .messageHeader {
@@ -240,9 +253,9 @@
 
 .inputContainer {
   padding: 20px;
-  background: #fff;
-  border-top: 1px solid #e2e8f0;
-  border-bottom: 1px solid #e2e8f0;
+  background: var(--dark-grey);
+  border-top: 1px solid var(--light-grey);
+  border-bottom: 1px solid var(--light-grey);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -268,7 +281,7 @@
 
 .sendButton {
   background: #2563eb;
-  color: #fff;
+  color: var(--white);
   border: none;
   padding: 8px 12px;
   border-radius: 6px;
@@ -293,7 +306,7 @@
 .userList h3 {
   margin: 0 0 16px 0;
   font-size: 0.9rem;
-  color: #64748b;
+  color: var(--white);
 }
 
 .channelList li::before {

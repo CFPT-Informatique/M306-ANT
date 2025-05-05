@@ -39,6 +39,7 @@ function Login({setLoggedIn}) {
                 const data = await response.json();
                 
                 localStorage.setItem("authToken", data.token);
+                sessionStorage.setItem("username",formData.username);
                 setLoggedIn(true);
                 navigate("/home");
             } else {

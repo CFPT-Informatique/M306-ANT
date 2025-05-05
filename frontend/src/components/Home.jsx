@@ -3,54 +3,140 @@ import styles from "./css/home.module.css";
 import seekflowLogo from "./assets/seekflow.png"
 
 function Home() {
-    // --- STATE FOR MESSAGES + INPUT ---
-    const [messages, setMessages] = useState([
-        { author: "IronTron1", text: "Hey les gars, la CI plante encore sur le build frontend 🐛, quelqu’un a une idée ?", timestamp: new Date("2025-04-17T12:46:00") },
-        { author: "TokyoBoyVS", text: "J’ai vu, c’est le test e2e qui timeout… Peut-être qu’on mock pas assez l’API interne ?", timestamp: new Date("2025-04-17T12:47:00") },
-        { author: "Wizoo", text: "Possible, ou alors le container Docker manque de mémoire… Je propose d’ajouter un swap et retester.", timestamp: new Date("2025-04-17T12:48:00") },
-        { author: "IronTron1", text: "Good call, je m’en occupe. Je pousse un fix sur le Dockerfile et je relance le pipeline 🚀", timestamp: new Date("2025-04-17T12:49:00") },
-        { author: "TokyoBoyVS", text: "Top, pense aussi à mettre à jour le README pour la config locale 😉", timestamp: new Date("2025-04-17T12:50:00") }        
-    ]);
-    const [input, setInput] = useState("");
-
-    // --- REFERENCES FOR AUTO-SCROLL + AUTO-FOCUS ---
-    const messagesRef = useRef(null);
-    const inputRef = useRef(null);
-
-    // --- LOGOTU HANDLER ---
-    const handleLogout = () => {
-        localStorage.removeItem("authToken");
-        window.location.href = "/login";
-    };
-
-    // const handleChannelSelect = (channelName) => {
-    //     // TODO : channel change logic here
-    // };
-
-    // --- SEND HANDLER ---
-    const handleSend = (e) => {
-        if (e) e.preventDefault();  // empêche le saut de ligne quand on appuyes sur enter
-        if (!input.trim()) return;
-        const newMsg = {
-            author: "TokyoBoyVS",   // TODO : replace with the dynamic variable containing (own) username
-            text: input.trim(),
-            timestamp: new Date()
+        // User connected
+        const user = sessionStorage.getItem("username");
+        const API_URL = 'https://api.m306.ch/api/chat/messages';
+    
+        // Array list users
+        const users = [
+            "IronTron1",
+            "TokyoBoyVS",
+            "Wizoo",
+            user
+        ].filter(Boolean);
+    
+        // --- STATE FOR MESSAGES + INPUT ---
+        const [messages, setMessages] = useState([]);
+        const [input, setInput] = useState("");
+        const [isLoading, setIsLoading] = useState(true);
+    
+        // --- REFERENCES FOR AUTO-SCROLL + AUTO-FOCUS ---
+        const messagesRef = useRef(null);
+        const inputRef = useRef(null);
+    
+        // --- FETCH MESSAGES FROM API ---
+        const fetchMessages = async () => {
+            try {
+                const response = await fetch(API_URL);
+                if (!response.ok) throw new Error('Failed to fetch messages');
+                const data = await response.json();
+                
+                // Convert API messages to your format
+                const formattedMessages = data.map(msg => ({
+                    author: msg.author,
+                    content: msg.text,
+                    timestamp: new Date(msg.timestamp)
+                }));
+                
+                // Combine with initial messages if needed
+                setMessages(formattedMessages);
+            } catch (error) {
+                console.error("Error fetching messages:", error);
+            } finally {
+                setIsLoading(false);
+            }
         };
-        setMessages(prev => [...prev, newMsg]);
-        setInput("");
-        // TODO: send over WebSocket here
-
-        inputRef.current?.focus();  // garde le focus sur la textarea
-    };
-
-    // --- AUTO-SCROLL
-    useEffect(() => {
-        const el = messagesRef.current;
-        if (el) {
-            el.scrollTop = el.scrollHeight;
+    
+        // --- INITIAL LOAD ---
+        useEffect(() => {
+            fetchMessages();
+        }, []);
+    
+        // --- SEND MESSAGE HANDLER ---
+        const handleSend = async (e) => {
+            if (e) e.preventDefault();
+            if (!input.trim()) return;
+        
+            // Création du message avec un ID unique pour mieux gérer le rollback
+            const tempId = Date.now(); // ID temporaire pour le message
+            const newMsg = {
+                tempId, 
+                author: user,
+                text: input.trim(),
+                timestamp: new Date()
+            };
+        
+            try {
+                // 1. Mise à jour optimiste UI
+                setMessages(prev => [...prev, newMsg]);
+                setInput("");
+                
+                // 2. Récupération du token
+                const authToken = localStorage.getItem("authToken");
+                if (!authToken) {
+                    throw new Error('Authentication token missing');
+                }
+        
+                // 3. Envoi à l'API
+                const response = await fetch(API_URL, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'Authorization': `Bearer ${authToken}`
+                    },
+                    body: JSON.stringify({
+                        author: newMsg.author,
+                        content: newMsg.text,
+                        timestamp: newMsg.timestamp.toISOString()
+                    })
+                });
+        
+                // 4. Gestion des erreurs HTTP
+                if (!response.ok) {
+                    const errorData = await response.json().catch(() => ({}));
+                    throw new Error(errorData.message || 'Échec de l\'envoi du message');
+                }
+        
+                // 5. Rechargement des messages après succès
+                await fetchMessages();
+        
+            } catch (error) {
+                console.error("Erreur d'envoi:", error);
+                
+                // 6. Rollback plus précis avec tempId
+                setMessages(prev => prev.filter(msg => msg.tempId !== tempId));
+                
+                // 7. Gestion des erreurs spécifiques
+                if (error.message.includes('token') || error.message.includes('authentification')) {
+                    // Redirection vers login si problème d'authentification
+                    window.location.href = '/login?error=session_expired';
+                } else {
+                    // Affichage d'une notification à l'utilisateur
+                    alert(`Message non envoyé: ${error.message}`);
+                }
+            } finally {
+                // 8. Remise du focus et reset de la hauteur du textarea
+                if (inputRef.current) {
+                    inputRef.current.focus();
+                    inputRef.current.style.height = 'auto';
+                }
+            }
+        };
+    
+        // --- AUTO-SCROLL ---
+        useEffect(() => {
+            messagesRef.current?.scrollTo(0, messagesRef.current.scrollHeight);
+        }, [messages]);
+    
+        // --- LOGOUT HANDLER ---
+        const handleLogout = () => {
+            sessionStorage.removeItem("username");
+            window.location.href = "/login";
+        };
+    
+        if (isLoading) {
+            return <div>Loading messages...</div>;
         }
-    }, [messages])
-
     // --- RENDER ---
     return (
         <div className={styles.homeContainer}>
@@ -67,7 +153,6 @@ function Home() {
 
             {/* Main content : aside left (channels), chat in th emiddle, aside right (users) */}
             <div className={styles.mainContent}>
-                {/* Channels list */}
                 <aside className={styles.channelList}>
                     <ul className={styles.channelList}>
                         {/* Below an example of how we could handle the channel switch.
@@ -88,75 +173,72 @@ function Home() {
 
                 {/* Chat flow where all the messages appear with messages "bubbles" and the PFPs */}
                 <section className={styles.chatWindow}>
-                    <h2>Chat</h2>
-                    <div className={styles.messages} ref={messagesRef}>
-                        {messages.map((msg, i) => {
-                            const isOwn = msg.author === "TokyoBoyVS";
-                            return (
-                                <div
-                                    key={i}
-                                    className={`${styles.message} ${isOwn ? styles.ownMessage : ""}`}
-                                >
-                                    <div
-                                        className={`${styles.messageAvatar} ${isOwn ? styles.me : styles.user}`}
-                                    />
-                                    <div className={styles.messageContent}>
-                                        <div className={styles.messageHeader}>
-                                            <span className={styles.author}>{msg.author}</span>
-                                            <span className={styles.timestamp}>
-                                                Today at{" "}
-                                                {msg.timestamp.toLocaleTimeString("en-US", {
-                                                    hour: "numeric",
-                                                    minute: "2-digit"
-                                                })}
-                                            </span>
-                                        </div>
-                                        <div className={styles.messageText}>{msg.text}</div>
-                                    </div>
+            <h2>Chat</h2>
+            
+            <div className={styles.messages} ref={messagesRef}>
+                {messages.map((msg, i) => {
+                    const isOwn = msg.author === user;
+                    return (
+                        <div key={i} className={`${styles.message} ${isOwn ? styles.ownMessage : ""}`}>
+                            <div className={`${styles.messageAvatar} ${isOwn ? styles.me : styles.user}`} />
+                            <div className={styles.messageContent}>
+                                <div className={styles.messageHeader}>
+                                    <span className={styles.author}>{msg.author}</span>
+                                    <span className={styles.timestamp}>
+                                        Today at{" "}
+                                        {msg.timestamp.toLocaleTimeString("en-US", {
+                                            hour: "numeric",
+                                            minute: "2-digit"
+                                        })}
+                                    </span>
                                 </div>
-                            );
-                        })}
-                    </div>
+                                <div className={styles.messageText}>{msg.text}</div>
+                            </div>
+                        </div>
+                    );
+                })}
+            </div>
 
-                    {/* Input area (input box, send button, maybe later attach files button) */}
-                    <div className={styles.inputContainer}>
-                        <textarea
-                            ref={inputRef}
-                            className={styles.chatInput}
-                            placeholder="Message #Chat"
-                            rows={1}
-                            value={input}
-                            onChange={e => setInput(e.target.value)}
-                            onInput={e => {
-                                e.target.style.height = "auto";
-                                e.target.style.height = `${e.target.scrollHeight}px`;
-                            }}
-                            onKeyDown={e => {
-                                if (e.key === "Enter" && !e.shiftKey) {
-                                    handleSend(e);
-                                }
-                            }}
-                        />
-                        <button
-                            type="button"
-                            className={styles.sendButton}
-                            onClick={handleSend}
-                        >
-                            Send <span className={styles.sendArrow}>→</span>
-                        </button>
-                    </div>
-                </section>
+            {/* Zone d'envoi (identique à ton code original) */}
+            <div className={styles.inputContainer}>
+                <textarea
+                    ref={inputRef}
+                    className={styles.chatInput}
+                    placeholder="Message #Chat"
+                    rows={1}
+                    value={input}
+                    onChange={e => setInput(e.target.value)}
+                    onInput={e => {
+                        e.target.style.height = "auto";
+                        e.target.style.height = `${e.target.scrollHeight}px`;
+                    }}
+                    onKeyDown={e => {
+                        if (e.key === "Enter" && !e.shiftKey) {
+                            handleSend(e);
+                        }
+                    }}
+                />
+                <button
+                    type="button"
+                    className={styles.sendButton}
+                    onClick={handleSend}
+                    disabled={!input.trim()}
+                >
+                    Send <span className={styles.sendArrow}>→</span>
+                </button>
+            </div>
+        </section>
 
                 {/* List of user (channel members) */}
                 {/* TODO : make the list dynamically loads depending on who's on the channel */}
                 <aside className={styles.userList}>
-                    <h3>Online — 4</h3>
-                    <ul className={styles.userList}>
-                        <li>IronTron1</li>
-                        <li>TokyoBoyVS</li>
-                        <li>Wizoo</li>
-                    </ul>
-                </aside>
+  <h3>Online — {users.length}</h3>
+  <ul className={styles.userList}>
+    {users.map((user, index) => (
+      <li key={index}>{user}</li>
+    ))}
+  </ul>
+</aside>
             </div>
         </div>
     );
