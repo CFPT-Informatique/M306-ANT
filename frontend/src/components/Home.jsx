@@ -130,7 +130,7 @@ function Home() {
     
         // --- LOGOUT HANDLER ---
         const handleLogout = () => {
-            sessionStorage.removeItem("username");
+            localStorage.removeItem("authToken");
             window.location.href = "/login";
         };
     
