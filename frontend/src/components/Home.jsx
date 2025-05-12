@@ -138,14 +138,20 @@ function Home() {
   }, [messages, users]);
 
   // — Scroll auto sur nouveaux messages —
-  useEffect(() => {
-    if (messagesRef.current) {
-      messagesRef.current.scrollTo({
-        top:      messagesRef.current.scrollHeight,
-        behavior: "smooth",
-      });
-    }
-  }, [messages]);
+ useEffect(() => {
+  const container = messagesRef.current;
+  if (!container) return;
+
+  const isNearBottom =
+    container.scrollHeight - container.scrollTop - container.clientHeight < 100;
+
+  if (isNearBottom) {
+    container.scrollTo({
+      top: container.scrollHeight,
+      behavior: "smooth",
+    });
+  }
+}, [messages]);
 
   // — UI loading / erreur —
   if (isLoading) return <div className={styles.loading}>Chargement en cours...</div>;
