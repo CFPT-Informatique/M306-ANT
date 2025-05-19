@@ -92,7 +92,7 @@ function Login({setLoggedIn}) {
                         type="button"
                         onClick={() => navigate("/register")}
                     >
-                        <FaArrowRight /> register
+                        <FaArrowRight /> Register
                     </button>
                 </form>
             </div>
