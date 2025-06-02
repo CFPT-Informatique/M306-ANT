@@ -1,45 +1,49 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\",
+  "WorkspaceRootPath": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\documents\\m306-ant\\backend\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\documents\\m306-ant\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\documents\\m306-ant\\backend\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\documents\\m306-ant\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\downloads\\m306-ant\\backend\\data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:data\\appdbcontext.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\documents\\m306-ant\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
-      "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\downloads\\m306-ant\\backend\\controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:controllers\\chatcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\documents\\m306-ant\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\downloads\\m306-ant\\backend\\models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:models\\message.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\documents\\m306-ant\\backend\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\downloads\\m306-ant\\backend\\dtos\\messagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:dtos\\messagedto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\documents\\m306-ant\\backend\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\downloads\\m306-ant\\backend\\dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:dtos\\logindto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\documents\\m306-ant\\backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\downloads\\m306-ant\\backend\\controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:controllers\\authcontroller.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\downloads\\m306-ant\\backend\\dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:dtos\\registerdto.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\downloads\\m306-ant\\backend\\models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:models\\user.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\documents\\m306-ant\\backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\downloads\\m306-ant\\backend\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\downloads\\m306-ant\\backend\\appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}",
+      "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:appsettings.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|c:\\users\\lucas\\downloads\\m306-ant\\backend\\backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
       "RelativeMoniker": "D:0:0:{59888D4F-1B3F-4134-A947-0498DAC4EFEA}|backend.csproj|solutionrelative:backend.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     }
   ],
@@ -50,71 +54,28 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 1,
+          "SelectedChildIndex": 5,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "ChatController.cs",
-              "DocumentMoniker": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\Controllers\\ChatController.cs",
-              "RelativeDocumentMoniker": "Controllers\\ChatController.cs",
-              "ToolTip": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\Controllers\\ChatController.cs",
-              "RelativeToolTip": "Controllers\\ChatController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABAAAAAfAAAAAAAAAA==",
+              "DocumentIndex": 3,
+              "Title": "MessageDto.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\DTOs\\MessageDto.cs",
+              "RelativeDocumentMoniker": "DTOs\\MessageDto.cs",
+              "ToolTip": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\DTOs\\MessageDto.cs",
+              "RelativeToolTip": "DTOs\\MessageDto.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T00:09:22.199Z",
+              "WhenOpened": "2025-06-02T08:26:42.935Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Message.cs",
-              "DocumentMoniker": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\Models\\Message.cs",
-              "RelativeDocumentMoniker": "Models\\Message.cs",
-              "ToolTip": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\Models\\Message.cs",
-              "RelativeToolTip": "Models\\Message.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T00:08:45.9Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
-              "Title": "backend",
-              "DocumentMoniker": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\backend.csproj",
-              "RelativeDocumentMoniker": "backend.csproj",
-              "ToolTip": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\backend.csproj",
-              "RelativeToolTip": "backend.csproj",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-06-02T00:04:58.085Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "AuthController.cs",
-              "DocumentMoniker": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\Controllers\\AuthController.cs",
-              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
-              "ToolTip": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\Controllers\\AuthController.cs",
-              "RelativeToolTip": "Controllers\\AuthController.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABKAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-06-02T00:03:34.405Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 4,
               "Title": "LoginDto.cs",
-              "DocumentMoniker": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\DTOs\\LoginDto.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\DTOs\\LoginDto.cs",
               "RelativeDocumentMoniker": "DTOs\\LoginDto.cs",
-              "ToolTip": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\DTOs\\LoginDto.cs",
+              "ToolTip": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\DTOs\\LoginDto.cs",
               "RelativeToolTip": "DTOs\\LoginDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -125,9 +86,9 @@
               "$type": "Document",
               "DocumentIndex": 6,
               "Title": "RegisterDto.cs",
-              "DocumentMoniker": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\DTOs\\RegisterDto.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\DTOs\\RegisterDto.cs",
               "RelativeDocumentMoniker": "DTOs\\RegisterDto.cs",
-              "ToolTip": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\DTOs\\RegisterDto.cs",
+              "ToolTip": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\DTOs\\RegisterDto.cs",
               "RelativeToolTip": "DTOs\\RegisterDto.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
@@ -136,55 +97,105 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 7,
               "Title": "User.cs",
-              "DocumentMoniker": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\Models\\User.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\Models\\User.cs",
               "RelativeDocumentMoniker": "Models\\User.cs",
-              "ToolTip": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\Models\\User.cs",
+              "ToolTip": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\Models\\User.cs",
               "RelativeToolTip": "Models\\User.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABQAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAA4AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T00:02:48.615Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 8,
               "Title": "Program.cs",
-              "DocumentMoniker": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\Program.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\Program.cs",
               "RelativeDocumentMoniker": "Program.cs",
-              "ToolTip": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\Program.cs",
+              "ToolTip": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\Program.cs",
               "RelativeToolTip": "Program.cs",
-              "ViewState": "AgIAAAwAAAAAAAAAAAAAAD4AAABHAAAAAAAAAA==",
+              "ViewState": "AgIAACUAAAAAAAAAAADwvz4AAABCAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T00:00:51.944Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 0,
               "Title": "AppDbContext.cs",
-              "DocumentMoniker": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\Data\\AppDbContext.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\Data\\AppDbContext.cs",
               "RelativeDocumentMoniker": "Data\\AppDbContext.cs",
-              "ToolTip": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\Data\\AppDbContext.cs",
+              "ToolTip": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\Data\\AppDbContext.cs",
               "RelativeToolTip": "Data\\AppDbContext.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAoAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2025-06-02T00:00:37.247Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 1,
+              "Title": "ChatController.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\Controllers\\ChatController.cs",
+              "RelativeDocumentMoniker": "Controllers\\ChatController.cs",
+              "ToolTip": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\Controllers\\ChatController.cs",
+              "RelativeToolTip": "Controllers\\ChatController.cs",
+              "ViewState": "AgIAABwAAAAAAAAAAAAgwDUAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T00:09:22.199Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Message.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\Models\\Message.cs",
+              "RelativeDocumentMoniker": "Models\\Message.cs",
+              "ToolTip": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\Models\\Message.cs",
+              "RelativeToolTip": "Models\\Message.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAlAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T00:08:45.9Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "AuthController.cs",
+              "DocumentMoniker": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\Controllers\\AuthController.cs",
+              "RelativeDocumentMoniker": "Controllers\\AuthController.cs",
+              "ToolTip": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\Controllers\\AuthController.cs",
+              "RelativeToolTip": "Controllers\\AuthController.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABIAAABKAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-06-02T00:03:34.405Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 10,
+              "Title": "backend.csproj",
+              "DocumentMoniker": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\backend.csproj",
+              "RelativeDocumentMoniker": "backend.csproj",
+              "ToolTip": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\backend.csproj",
+              "RelativeToolTip": "backend.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABMAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-06-02T00:04:58.085Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 9,
               "Title": "appsettings.json",
-              "DocumentMoniker": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\appsettings.json",
+              "DocumentMoniker": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\appsettings.json",
               "RelativeDocumentMoniker": "appsettings.json",
-              "ToolTip": "C:\\Users\\Lucas\\Documents\\M306-ANT\\backend\\appsettings.json",
+              "ToolTip": "C:\\Users\\lucas\\Downloads\\M306-ANT\\backend\\appsettings.json",
               "RelativeToolTip": "appsettings.json",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAUAAAAuAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
-              "WhenOpened": "2025-06-01T23:59:59.632Z",
-              "EditorCaption": ""
+              "WhenOpened": "2025-06-01T23:59:59.632Z"
             }
           ]
         }

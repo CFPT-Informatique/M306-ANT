@@ -40,7 +40,7 @@ function Register() {
         }
 
         const postData = {
-            username: formData.name,
+            username: formData.username,
             email: formData.email,
             password: formData.password
         };

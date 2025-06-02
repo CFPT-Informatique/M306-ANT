@@ -30,11 +30,14 @@ function Home() {
         throw new Error("Le serveur n’a pas renvoyé du JSON.");
       }
       const data = await res.json();
-      const parsed = data.map(msg => ({
+      const parsed = data
+      .map(msg => ({
         sender: msg.sender,
         text: msg.content,
-        timestamp: new Date(msg.timestamp || msg.createdAt),
-      }));
+        timestamp: new Date(msg.createdAt),
+      }))
+      .sort((a, b) => a.timestamp - b.timestamp); // tri croissant
+
       setMessages(parsed);
     } catch (err) {
       console.error("fetchMessages error:", err);
@@ -78,7 +81,6 @@ function Home() {
         body: JSON.stringify({
           sender: user,
           content: newMsg.text,
-          timestamp: newMsg.timestamp.toISOString(),
         }),
       });
 
@@ -98,7 +100,7 @@ function Home() {
   useEffect(() => {
     fetchMessages();
     fetchUsers();
-    const msgInterval = setInterval(fetchMessages, 2000);
+    const msgInterval = setInterval(fetchMessages, 10000);
     const userInterval = setInterval(fetchUsers, 5000);
     return () => {
       clearInterval(msgInterval);
@@ -115,12 +117,11 @@ function Home() {
 
   useEffect(() => {
     const container = messagesRef.current;
-    if (!container) return;
-    const isNearBottom = container.scrollHeight - container.scrollTop - container.clientHeight < 100;
-    if (isNearBottom) {
+    if (container) {
       container.scrollTo({ top: container.scrollHeight, behavior: "smooth" });
     }
   }, [messages]);
+  
 
   if (isLoading) return <div className={styles.loading}>Chargement en cours...</div>;
   if (error) return <div className={styles.error}>{error}</div>;
@@ -136,14 +137,7 @@ function Home() {
       </header>
 
       <div className={styles.mainContent}>
-        <aside className={styles.channelList}>
-          <ul>
-            <li className={styles.active}>Chat</li>
-            <li>Images</li>
-            <li>Commands</li>
-            <li>SecretChannel</li>
-          </ul>
-        </aside>
+
 
         <section className={styles.chatWindow}>
           <h2>Chat</h2>

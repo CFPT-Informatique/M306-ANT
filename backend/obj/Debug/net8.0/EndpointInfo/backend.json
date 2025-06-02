@@ -59,6 +59,26 @@
             "description": "Success"
           }
         }
+      },
+      "post": {
+        "tags": [
+          "backend"
+        ],
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "$ref": "#/components/schemas/MessageDto"
+              }
+            }
+          },
+          "required": true
+        },
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
       }
     },
     "/api/chat/users": {
@@ -84,6 +104,20 @@
             "nullable": true
           },
           "password": {
+            "type": "string",
+            "nullable": true
+          }
+        },
+        "additionalProperties": false
+      },
+      "MessageDto": {
+        "type": "object",
+        "properties": {
+          "sender": {
+            "type": "string",
+            "nullable": true
+          },
+          "content": {
             "type": "string",
             "nullable": true
           }
