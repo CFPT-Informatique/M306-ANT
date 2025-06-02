@@ -46,7 +46,7 @@ function Register() {
         };
 
         try {
-            const response = await fetch('https://api.m306.ch/api/auth/register', {
+            const response = await fetch("http://localhost:5294/api/auth/register", {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
@@ -89,21 +89,21 @@ function Register() {
         <div className={styles.registerBody}>
             <div className={styles.registerMain}>
                 <form onSubmit={handleSubmit}>
-                    <label>Enter your name :
+                    <label>Enter your username :
                         <input 
                             type="text"
-                            name="name"
-                            placeholder="name"
-                            value={formData.name}
+                            name="username"
+                            placeholder="E.g: Scared, TokyoBoy..."
+                            value={formData.username}
                             onChange={handleChange}
                             required
                         />
                     </label>
-                    <label>Enter your email :
+                    <label>Enter your E-Mail :
                         <input 
                             type="email"
                             name="email"
-                            placeholder="exemple@gmail.com"
+                            placeholder="E.g: exemple@gmail.com"
                             value={formData.email}
                             onChange={handleChange}
                             required
@@ -113,7 +113,7 @@ function Register() {
                         <input 
                             type="password"
                             name="password"
-                            placeholder="My password"
+                            placeholder="E.g: MySuperPass"
                             value={formData.password}
                             onChange={handleChange}
                             required
@@ -123,7 +123,7 @@ function Register() {
                         <input 
                             type="password"
                             name="confirmPassword"
-                            placeholder="My password"
+                            placeholder="E.g: MySuperPass"
                             value={formData.confirmPassword}
                             onChange={handleChange}
                             required
